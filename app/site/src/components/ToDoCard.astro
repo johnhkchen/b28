@@ -1,0 +1,29 @@
+---
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card"
+
+import {CarouselDemo} from '@/components/Carousel.tsx';
+
+const { title, description, footer } = Astro.props;
+---
+<Card>
+    <CardHeader>
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
+    </CardHeader>
+    <CardContent className="flex flex-col items-center">
+        <div class="bg-black h-full px-16 mx-16">
+            <CarouselDemo client:load/>
+        </div>
+        <slot />
+    </CardContent>
+    <CardFooter>
+        <p>{footer}</p>
+    </CardFooter>
+</Card>
