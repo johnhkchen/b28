@@ -12,15 +12,13 @@ import {CarouselDemo} from '@/components/Carousel.tsx';
 
 const { title, description, footer } = Astro.props;
 ---
-<Card>
+<Card className="mx-4 px-2 md:px-16">
+    <CarouselDemo client:load/>
     <CardHeader>
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
     </CardHeader>
-    <CardContent className="flex flex-col items-center">
-        <div class="bg-black h-full px-16 mx-16">
-            <CarouselDemo client:load/>
-        </div>
+    <CardContent>
         <slot />
     </CardContent>
     <CardFooter>
