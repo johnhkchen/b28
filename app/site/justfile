@@ -1,0 +1,4 @@
+env:
+    flox activate
+dev:
+    pnpm dev
